@@ -15,7 +15,7 @@ CvCapture* feed;
 bool live = false;
 
 // constructor 1
-void videofeed(int camNumber) {
+void VideoFeed(int camNumber) {
   // Initialize feed
    feed = cvCaptureCAM(camNumber);
   // Make sure feed is live, else throw exception
@@ -32,6 +32,16 @@ CvCapture* get() {
     return feed;
   else {
     throw "NoFeedException (videofeed.cpp | CvCapture* get())";
+    return NULL;
+  }
+}
+
+CvSize getSize() {
+  // Make sure feed is available, else throw exception
+  if (feed != NULL) 
+    return cvGetSize(cvQueryFrame(feed));
+  else {
+    throw "NoFeedException (videofeed.cpp | getSize())";
     return NULL;
   }
 }

@@ -36,12 +36,26 @@ CvCapture* get() {
   }
 }
 
+// Get size of feed
 CvSize getSize() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) 
     return cvGetSize(cvQueryFrame(feed));
   else {
-    throw "NoFeedException (videofeed.cpp | getSize())";
+    throw "NoFeedException (videofeed.cpp | CvSize getSize())";
+    return NULL;
+  }
+}
+
+IplImage* getAsIplImage() {
+  // Make sure feed is available, else throw exception
+  if (feed != NULL) {
+    CvSize sz = getSize();
+    // Default 3 channels // depth 8
+    IplImage* img = cvCreateImage(sz, 8, 3);
+    return img;
+  } else {
+    throw "NoFeedException (videofeed.cpp | IplImage* getAsIplImage())";
     return NULL;
   }
 }

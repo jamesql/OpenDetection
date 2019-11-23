@@ -1,7 +1,7 @@
 # Open Detection II
 Open source software that allows you to detect multiple types of objects and interact with the world using computer vision.
 
-# Detection Techniques
+# Detection Methods
 - Finger Detection
 - Object Tracking
 - Face Detection & Tracking
@@ -9,8 +9,9 @@ Open source software that allows you to detect multiple types of objects and int
 - Finger Lock (2FA Method)
 - More to come!
 
-# Dependicies
+# Dependencies
 - OpenCV (2.4.10)
+
 
 # Systems Tested For
 - Windows 32Bit (AMD)

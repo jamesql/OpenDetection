@@ -2,7 +2,7 @@
 #include <VideoFeed.h>
 
 // constructor 1
-void VideoFeed(int camNumber) {
+void VideoFeed::VideoFeed(int camNumber) {
   // Initialize feed
    feed = cvCaptureCAM(camNumber);
   // Make sure feed is live, else throw exception
@@ -12,13 +12,13 @@ void VideoFeed(int camNumber) {
     throw "CamFeedException (videofeed.cpp | constructor(int))";
 }
 
-// check if feed is live
-bool isLive() {
+// Check if feed is live
+bool VideoFeed::isLive() {
   return live;
 }
 
 // Return feed
-CvCapture* get() {
+CvCapture* VideoFeed::get() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) 
     return feed;
@@ -29,7 +29,7 @@ CvCapture* get() {
 }
 
 // Get size of feed
-CvSize getSize() {
+CvSize VideoFeed::getSize() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) 
     return cvGetSize(cvQueryFrame(feed));
@@ -39,7 +39,7 @@ CvSize getSize() {
   }
 }
 
-IplImage* getAsIplImage() {
+IplImage* VideoFeed::getAsIplImage() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) {
     CvSize sz = getSize();
@@ -53,7 +53,7 @@ IplImage* getAsIplImage() {
   }
 }
 
-IplImage* getSmoothedImage(int smoothingType) {
+IplImage* VideoFeed::getSmoothedImage(int smoothingType) {
   // Make sure feed is available, else throw exception
   if (feed != NULL) {
     // check if smoothing type is valid
@@ -68,7 +68,7 @@ IplImage* getSmoothedImage(int smoothingType) {
   }
 }
 
-IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
+IplImage* VideoFeed::getImageMask(int smoothingType, int grayScaleType, int threshType) {
     // Make sure feed is available, else throw exception
     if (feed != NULL) {
       // check if types inputed are valid

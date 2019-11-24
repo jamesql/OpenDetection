@@ -1,5 +1,5 @@
-# Open Detection II
-Open source software that allows you to detect multiple types of objects and interact with the world using computer vision.
+<h1 align="center">Open Detection 2</h1>
+<h3 align="center">Open source software that allows you to detect multiple types of objects and interact with the world using computer vision.</h3>
 
 # Detection Methods
 - Finger Detection

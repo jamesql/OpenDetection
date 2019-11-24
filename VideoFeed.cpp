@@ -11,9 +11,9 @@
 #define OD_THRESH_MUTLI 1
 #define OD_THRESH_SINGLE 2
 #define OD_THRESH_CUSTOM 3
-
-
-
+#define OD_BLUR_REG 1
+#define OD_BLUE_GAUS 2
+#define OD_BLUR_MEDIAN 3
 
 // Use namespaces
 using namespace std;
@@ -71,4 +71,10 @@ IplImage* getAsIplImage() {
   }
 }
 
+IplImage* getSmoothedImage(int smoothingType) {
 
+}
+
+IplImage* getImageMask(int smoothingType) {
+  
+}

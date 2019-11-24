@@ -77,9 +77,21 @@ IplImage* getAsIplImage() {
 }
 
 IplImage* getSmoothedImage(int smoothingType) {
-
+  // Make sure feed is available, else throw exception
+  if (feed != NULL) {
+    
+  } else {
+    throw "NoFeedException (videofeed.cpp | IplImage* getSmoothedImage())";
+    return NULL;
+  }
 }
 
 IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
-  
+    // Make sure feed is available, else throw exception
+    if (feed != NULL) {
+    
+    } else {
+      throw "NoFeedException (videofeed.cpp | IplImage* getImageMask())";
+      return NULL;
+    }
 }

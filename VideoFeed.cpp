@@ -5,6 +5,16 @@
 #include <opencv/cxcore.h>
 #include <opencv/highgui.h>
 
+#define OD_GRAYSCALE 1
+#define OD_GRAYSCALE_V2 2
+#define OD_GRAYSCALE_V3 3
+#define OD_THRESH_MUTLI 1
+#define OD_THRESH_SINGLE 2
+#define OD_THRESH_CUSTOM 3
+
+
+
+
 // Use namespaces
 using namespace std;
 using namespace cv;

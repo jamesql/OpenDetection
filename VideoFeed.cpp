@@ -35,6 +35,11 @@ void VideoFeed(int camNumber) {
     throw "CamFeedException (videofeed.cpp | constructor(int))";
 }
 
+// check if feed is live
+bool isLive() {
+  return live;
+}
+
 // Return feed
 CvCapture* get() {
   // Make sure feed is available, else throw exception

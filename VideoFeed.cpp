@@ -75,6 +75,6 @@ IplImage* getSmoothedImage(int smoothingType) {
 
 }
 
-IplImage* getImageMask(int smoothingType) {
+IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
   
 }

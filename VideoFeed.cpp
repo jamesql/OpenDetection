@@ -1,31 +1,5 @@
-#include <iostream>
-
-// OpenCV Includes
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-#include <opencv/highgui.h>
-
-#define OD_GRAYSCALE 1
-#define OD_GRAYSCALE_V2 2
-#define OD_GRAYSCALE_V3 3
-#define OD_THRESH_MUTLI 1
-#define OD_THRESH_SINGLE 2
-#define OD_THRESH_CUSTOM 3
-#define OD_BLUR_REG 1
-#define OD_BLUE_GAUS 2
-#define OD_BLUR_MEDIAN 3
-#define OD_MAX_SMOOTH 3
-#define OD_MAX_GSCALE 3
-#define OD_MAX_THRESH 3
-
-// Use namespaces
-using namespace std;
-using namespace cv;
-
-// declarations
-CvCapture* feed;
-// (videofeed) obj.live == ?;
-bool live = false;
+// Include Header File
+#include <VideoFeed.h>
 
 // constructor 1
 void VideoFeed(int camNumber) {

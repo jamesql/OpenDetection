@@ -8,11 +8,15 @@
 <h3 align="center">Open source software that allows you to detect multiple types of objects and interact with the world using computer vision.</h3>
 
 # Detection Methods
-- Finger Detection
-- Object Tracking
-- Face Detection & Tracking
-- Face ID Demo
-- Finger Lock (2FA Method)
+| Detection Method   | Header File       | Dependent Files                                       |
+|--------------------|-------------------|-------------------------------------------------------|
+| Finger Detection   | FingerDetection.h | VideoFeed.h / ImgProc.h                               |
+| Face Detection     | FaceDetection.h   | VideoFeed.h / ImgProc.h                               |
+| Face Tracking      | FaceTracker.h     | VideoFeed.h / ImgProc.h, FaceDetection.h, Cascade.xml |
+| Face Recognition   | FaceReco.h        | VideoFeed.h / ImgProc.h, FaceDetection.h, Cascade.xml |
+| Object Tracking    | ObjTracker.h      | VideoFeed.h / ImgProc.h, ObjCascade.xml               |
+| Object Recognition | ObjReco.h         | VideoFeed.h / ImgProc.h, ObjTracker.h, ObjCascade.xml |
+
 - More to come!
 
 # Dependencies

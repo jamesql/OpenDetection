@@ -1,6 +1,9 @@
 <h1 align="center">Open Detection 2</h1>
     <p align="center">
     <img src='https://img.shields.io/badge/OpenCV-2.4.10-violet'></img>
+    <img src='https://img.shields.io/badge/Build-partial-yellow'></img>
+    <img src='https://img.shields.io/badge/Dependencies-up%20to%20date-green'></img>
+
   </p>
 <h3 align="center">Open source software that allows you to detect multiple types of objects and interact with the world using computer vision.</h3>
 

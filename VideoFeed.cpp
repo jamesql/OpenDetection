@@ -99,7 +99,7 @@ IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
     if (feed != NULL) {
       // check if types inputed are valid
       if (smoothingType > OD_MAX_SMOOTH || grayScaleType > OD_MAX_GSCALE || threshType > OD_MAX_THRESH) {
-        throw "NullTypeException (videofeed.cpp | IplImage* getSmoothedImage())";
+        throw "NullTypeException (videofeed.cpp | IplImage* getImageMask())";
         return NULL;
       }
     

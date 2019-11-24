@@ -53,9 +53,12 @@ IplImage* getAsIplImage() {
     CvSize sz = getSize();
     // Default 3 channels // depth 8
     IplImage* img = cvCreateImage(sz, 8, 3);
+    img = cvQueryFrame(feed);
     return img;
   } else {
     throw "NoFeedException (videofeed.cpp | IplImage* getAsIplImage())";
     return NULL;
   }
 }
+
+

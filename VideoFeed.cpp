@@ -1,34 +1,8 @@
-#include <iostream>
-
-// OpenCV Includes
-#include <opencv/cv.h>
-#include <opencv/cxcore.h>
-#include <opencv/highgui.h>
-
-#define OD_GRAYSCALE 1
-#define OD_GRAYSCALE_V2 2
-#define OD_GRAYSCALE_V3 3
-#define OD_THRESH_MUTLI 1
-#define OD_THRESH_SINGLE 2
-#define OD_THRESH_CUSTOM 3
-#define OD_BLUR_REG 1
-#define OD_BLUE_GAUS 2
-#define OD_BLUR_MEDIAN 3
-#define OD_MAX_SMOOTH 3
-#define OD_MAX_GSCALE 3
-#define OD_MAX_THRESH 3
-
-// Use namespaces
-using namespace std;
-using namespace cv;
-
-// declarations
-CvCapture* feed;
-// (videofeed) obj.live == ?;
-bool live = false;
+// Include Header File
+#include <VideoFeed.h>
 
 // constructor 1
-void VideoFeed(int camNumber) {
+void VideoFeed::VideoFeed(int camNumber) {
   // Initialize feed
    feed = cvCaptureCAM(camNumber);
   // Make sure feed is live, else throw exception
@@ -38,13 +12,13 @@ void VideoFeed(int camNumber) {
     throw "CamFeedException (videofeed.cpp | constructor(int))";
 }
 
-// check if feed is live
-bool isLive() {
+// Check if feed is live
+bool VideoFeed::isLive() {
   return live;
 }
 
 // Return feed
-CvCapture* get() {
+CvCapture* VideoFeed::get() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) 
     return feed;
@@ -55,7 +29,7 @@ CvCapture* get() {
 }
 
 // Get size of feed
-CvSize getSize() {
+CvSize VideoFeed::getSize() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) 
     return cvGetSize(cvQueryFrame(feed));
@@ -65,7 +39,7 @@ CvSize getSize() {
   }
 }
 
-IplImage* getAsIplImage() {
+IplImage* VideoFeed::getAsIplImage() {
   // Make sure feed is available, else throw exception
   if (feed != NULL) {
     CvSize sz = getSize();
@@ -79,7 +53,7 @@ IplImage* getAsIplImage() {
   }
 }
 
-IplImage* getSmoothedImage(int smoothingType) {
+IplImage* VideoFeed::getSmoothedImage(int smoothingType) {
   // Make sure feed is available, else throw exception
   if (feed != NULL) {
     // check if smoothing type is valid
@@ -94,7 +68,7 @@ IplImage* getSmoothedImage(int smoothingType) {
   }
 }
 
-IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
+IplImage* VideoFeed::getImageMask(int smoothingType, int grayScaleType, int threshType) {
     // Make sure feed is available, else throw exception
     if (feed != NULL) {
       // check if types inputed are valid

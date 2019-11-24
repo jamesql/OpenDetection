@@ -14,6 +14,9 @@
 #define OD_BLUR_REG 1
 #define OD_BLUE_GAUS 2
 #define OD_BLUR_MEDIAN 3
+#define OD_MAX_SMOOTH 3
+#define OD_MAX_GSCALE 3
+#define OD_MAX_THRESH 3
 
 // Use namespaces
 using namespace std;
@@ -79,6 +82,11 @@ IplImage* getAsIplImage() {
 IplImage* getSmoothedImage(int smoothingType) {
   // Make sure feed is available, else throw exception
   if (feed != NULL) {
+    // check if smoothing type is valid
+    if (smoothingType > OD_MAX_SMOOTH) {
+      throw "NullSmoothingType (videofeed.cpp | IplImage* getSmoothedImage())";
+      return NULL;
+    }
     
   } else {
     throw "NoFeedException (videofeed.cpp | IplImage* getSmoothedImage())";
@@ -89,6 +97,11 @@ IplImage* getSmoothedImage(int smoothingType) {
 IplImage* getImageMask(int smoothingType, int grayScaleType, int threshType) {
     // Make sure feed is available, else throw exception
     if (feed != NULL) {
+      // check if types inputed are valid
+      if (smoothingType > OD_MAX_SMOOTH || grayScaleType > OD_MAX_GSCALE || threshType > OD_MAX_THRESH) {
+        throw "NullTypeException (videofeed.cpp | IplImage* getSmoothedImage())";
+        return NULL;
+      }
     
     } else {
       throw "NoFeedException (videofeed.cpp | IplImage* getImageMask())";

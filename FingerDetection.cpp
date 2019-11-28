@@ -23,4 +23,8 @@ void FingerDetction::FingerDetection() {
 
 }
 
+int FingerDetection::returnCount() { 
+  return FingerDetection::count;
+}
+
 // Instantiate rest from FingerDetection.h

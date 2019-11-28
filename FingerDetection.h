@@ -8,7 +8,7 @@
 class FingerDetection {
   public:
     FingerDetection(void);
-    int returhCount();
+    int returnCount();
     int countFromImage(IplImage* img);
     IplImage* getMaskedImageFeed();
     IplImage* getMaskedImageFrame(IplImage* img);

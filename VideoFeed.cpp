@@ -69,7 +69,7 @@ IplImage* VideoFeed::getSmoothedImage(int smoothingType) {
 }
 
 IplImage* VideoFeed::getImageMask(int smoothingType, int grayScaleType, int threshType) {
-    // Make sure feed is available, else throw exeption
+    // Make sure feed is available, else throw exception
     if (feed != NULL) {
       // check if types inputed are valid
       if (smoothingType > OD_MAX_SMOOTH || grayScaleType > OD_MAX_GSCALE || threshType > OD_MAX_THRESH) {

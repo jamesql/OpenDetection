@@ -1,6 +1,6 @@
 <h1 align="center">Open Detection 2</h1>
-<a href='https://github.com/smitteh1/OpenDetection3'>Open Detection 3 is coming!</a>
     <p align="center">
+    <a href='https://github.com/smitteh1/OpenDetection3'>Open Detection 3 is coming!</a>
     <img src='https://img.shields.io/badge/OpenCV-2.4.10-violet'></img>
     <img src='https://img.shields.io/badge/Build-partial-yellow'></img>
     <img src='https://img.shields.io/badge/Dependencies-out%20of%20date-red'></img>
